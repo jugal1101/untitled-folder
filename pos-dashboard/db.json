@@ -1,0 +1,616 @@
+{
+    "users": [
+      {
+        "id": 1,
+        "name": "Akhil Sarkar",
+        "role": "Manager",
+        "email": "Akhil@gmail.com",
+        "password": "Pass@123",
+        "salary": 50000,
+        "totalSales": 150000,
+        "totalOrdersHandled": 320
+      },
+      {
+        "id": 2,
+        "name": "Jugal Rana",
+        "role": "Employee",
+        "email": "jugal@gmail.com",
+        "password": "Pass@123",
+        "salary": 20000,
+        "totalSales": 40000,
+        "totalOrdersHandled": 90
+      },
+      {
+        "id": 3,
+        "name": "Priya Patil",
+        "role": "Employee",
+        "email": "priya@gmail.com",
+        "password": "Pass@123",
+        "salary": 21000,
+        "totalSales": 45000,
+        "totalOrdersHandled": 95
+      },
+      {
+        "id": 4,
+        "name": "Bhupen Baghul",
+        "role": "Employee",
+        "email": "bhupen@gmail.com",
+        "password": "Pass@123",
+        "salary": 25000,
+        "totalSales": 55000,
+        "totalOrdersHandled": 105
+      }
+    ],
+  
+    "menu": {
+      "Pizza": [
+        {
+          "id": 201,
+          "name": "Margherita Pizza",
+          "price": 180,
+          "availability": true,
+          "taxRate": 5,
+          "description": "Classic cheese pizza topped with mozzarella and tomato sauce.",
+          "image": "https://plus.unsplash.com/premium_photo-1667682942148-a0c98d1d70db?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2070"
+        },
+        {
+          "id": 202,
+          "name": "Farmhouse Pizza",
+          "price": 220,
+          "availability": true,
+          "taxRate": 5,
+          "description": "Loaded with mushrooms, onions, capsicum, and juicy tomatoes.",
+          "image": "https://plus.unsplash.com/premium_photo-1737757513963-025f5468b802?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2070"
+        },
+        {
+          "id": 203,
+          "name": "Pepperoni Pizza",
+          "price": 250,
+          "availability": true,
+          "taxRate": 5,
+          "description": "Topped with delicious pepperoni slices and extra cheese.",
+          "image": "https://images.unsplash.com/photo-1705537637301-956413896f3c?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1089"
+        },
+        {
+          "id": 204,
+          "name": "Paneer Tikka Pizza",
+          "price": 240,
+          "availability": true,
+          "taxRate": 5,
+          "description": "Indian twist pizza topped with marinated paneer and spicy sauce.",
+          "image": "https://images.unsplash.com/photo-1712652080841-9e480a2c43ec?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjN8fFBhbmVlciUyMFRpa2thJTIwUGl6emF8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&q=60&w=900"
+        },
+        {
+          "id": 205,
+          "name": "Veggie Delight Pizza",
+          "price": 200,
+          "availability": true,
+          "taxRate": 5,
+          "description": "Colorful mix of fresh veggies on a cheesy crust.",
+          "image": "https://plus.unsplash.com/premium_photo-1672498268734-0f41e888298d?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=987"
+        },
+        {
+          "id": 206,
+          "name": "BBQ Chicken Pizza",
+          "price": 270,
+          "availability": true,
+          "taxRate": 5,
+          "description": "Juicy chicken chunks with smoky BBQ sauce and cheese.",
+          "image": "https://images.unsplash.com/photo-1655471264183-068c91041ba5?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1085"
+        },
+        {
+          "id": 207,
+          "name": "Cheese Burst Pizza",
+          "price": 260,
+          "availability": true,
+          "taxRate": 5,
+          "description": "Cheese oozing crust pizza for cheese lovers.",
+          "image": "https://images.unsplash.com/photo-1527133256227-fc3549f55332?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1480"
+        },
+        {
+          "id": 208,
+          "name": "Mexican Green Wave",
+          "price": 230,
+          "availability": true,
+          "taxRate": 5,
+          "description": "Loaded with jalapenos, onions, and spicy Mexican seasoning.",
+          "image": "https://plus.unsplash.com/premium_photo-1726876999830-947ab0f0ac62?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2070"
+        },
+        {
+          "id": 209,
+          "name": "Tandoori Paneer Pizza",
+          "price": 250,
+          "availability": true,
+          "taxRate": 5,
+          "description": "Tandoori sauce base topped with spicy paneer cubes.",
+          "image": "https://images.unsplash.com/photo-1672856399643-47ddf6b2d6d6?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1619"
+        },
+        {
+          "id": 210,
+          "name": "Deluxe Veggie Pizza",
+          "price": 240,
+          "availability": true,
+          "taxRate": 5,
+          "description": "Loaded with olives, onions, capsicum, and mushrooms.",
+          "image": "https://images.unsplash.com/photo-1654954948316-476d52051c40?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1674"
+        }
+      ],
+  
+      "Burger": [
+        {
+          "id": 301,
+          "name": "Classic Veg Burger",
+          "price": 120,
+          "availability": true,
+          "taxRate": 5,
+          "description": "Crispy veg patty served in soft buns with lettuce and mayo.",
+          "image": "https://plus.unsplash.com/premium_photo-1675252371648-7a6481df8226?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2070"
+        },
+        {
+          "id": 302,
+          "name": "Cheese Burst Burger",
+          "price": 150,
+          "availability": true,
+          "taxRate": 5,
+          "description": "Loaded with cheese and a juicy veg patty.",
+          "image": "https://images.unsplash.com/photo-1584178639036-613ba57e5e39?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2070"
+        },
+        {
+          "id": 303,
+          "name": "Paneer Supreme Burger",
+          "price": 170,
+          "availability": true,
+          "taxRate": 5,
+          "description": "Spicy paneer patty with tangy sauces.",
+          "image": "https://images.unsplash.com/photo-1724352476668-6cbd99da2d6b?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2070"
+        },
+        {
+          "id": 304,
+          "name": "Crispy Chicken Burger",
+          "price": 180,
+          "availability": true,
+          "taxRate": 5,
+          "description": "Crispy chicken fillet with lettuce and mayo.",
+          "image": "https://images.unsplash.com/photo-1627492377282-355e0f42b375?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDd8fHxlbnwwfHx8fHw%3D&auto=format&fit=crop&q=60&w=900"
+        },
+        {
+          "id": 305,
+          "name": "Double Patty Burger",
+          "price": 220,
+          "availability": true,
+          "taxRate": 5,
+          "description": "Double layers of patty, cheese, and sauce.",
+          "image": "https://images.unsplash.com/photo-1618538701087-fb7e0312de34?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2234"
+        },
+        {
+          "id": 306,
+          "name": "BBQ Chicken Burger",
+          "price": 190,
+          "availability": true,
+          "taxRate": 5,
+          "description": "Smoky BBQ chicken burger with onion rings.",
+          "image": "https://images.unsplash.com/photo-1687580713658-dc3cc2f3aaae?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2070"
+        },
+        {
+          "id": 307,
+          "name": "Aloo Tikki Burger",
+          "price": 100,
+          "availability": true,
+          "taxRate": 5,
+          "description": "Indian favorite burger with spicy potato patty.",
+          "image": "https://images.unsplash.com/photo-1613160775054-d4a634592b7f?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2070"
+        },
+        {
+          "id": 308,
+          "name": "Spicy Veggie Burger",
+          "price": 130,
+          "availability": true,
+          "taxRate": 5,
+          "description": "Fiery veg burger with spicy sauces.",
+          "image": "https://images.unsplash.com/photo-1567446991015-48a7a6d17ec6?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2067"
+        },
+        {
+          "id": 309,
+          "name": "Egg & Cheese Burger",
+          "price": 160,
+          "availability": true,
+          "taxRate": 5,
+          "description": "Soft egg omelette with cheese and mayo.",
+          "image": "https://images.unsplash.com/photo-1565975925216-8bde89da915d?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2094"
+        },
+        {
+          "id": 310,
+          "name": "Maharaja Burger",
+          "price": 250,
+          "availability": true,
+          "taxRate": 5,
+          "description": "King-size burger with triple layers of patty, cheese, and sauces.",
+          "image": "https://images.unsplash.com/photo-1615917124838-1af8a2aaae09?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1674"
+        }
+      ],
+  
+      "Snacks": [
+        {
+          "id": 401,
+          "name": "French Fries",
+          "price": 90,
+          "availability": true,
+          "taxRate": 5,
+          "description": "Crispy golden fries served with ketchup.",
+          "image": "https://plus.unsplash.com/premium_photo-1756454860162-a2bf7c29efea?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2070"
+        },
+        {
+          "id": 402,
+          "name": "Cheese Balls",
+          "price": 110,
+          "availability": true,
+          "taxRate": 5,
+          "description": "Crispy cheesy bites filled with molten cheese.",
+          "image": "https://plus.unsplash.com/premium_photo-1668202968335-b5e4de1aa8e8?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2069"
+        },
+        {
+          "id": 403,
+          "name": "Onion Rings",
+          "price": 100,
+          "availability": true,
+          "taxRate": 5,
+          "description": "Crispy deep-fried onion rings with spicy dip.",
+          "image": "https://plus.unsplash.com/premium_photo-1668995975042-6344a48aef90?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2233"
+        },
+        {
+          "id": 404,
+          "name": "Garlic Bread",
+          "price": 120,
+          "availability": true,
+          "taxRate": 5,
+          "description": "Toasted bread topped with garlic and butter.",
+          "image": "https://plus.unsplash.com/premium_photo-1711752904630-0da29cbad0c0?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2069"
+        },
+        {
+          "id": 405,
+          "name": "Paneer Pakoda",
+          "price": 130,
+          "availability": true,
+          "taxRate": 5,
+          "description": "Deep-fried paneer coated in gram flour batter.",
+          "image": "https://images.unsplash.com/photo-1666001120694-3ebe8fd207be?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2070"
+        },
+        {
+          "id": 406,
+          "name": "Masala Fries",
+          "price": 100,
+          "availability": true,
+          "taxRate": 5,
+          "description": "Crispy fries tossed in Indian masala.",
+          "image": "https://images.unsplash.com/photo-1599975744981-48d63c8f38af?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2070"
+        },
+        {
+          "id": 407,
+          "name": "Corn Cheese Balls",
+          "price": 140,
+          "availability": true,
+          "taxRate": 5,
+          "description": "Cheesy corn-filled balls fried to perfection.",
+          "image": "https://plus.unsplash.com/premium_photo-1695044277446-df07c6a546eb?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2070"
+        },
+        {
+          "id": 408,
+          "name": "Samosa",
+          "price": 50,
+          "availability": true,
+          "taxRate": 5,
+          "description": "Crispy Indian snack stuffed with spiced potatoes.",
+          "image": "https://images.unsplash.com/photo-1545668856-6eb87ce33b7a?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2073"
+        },
+        {
+          "id": 409,
+          "name": "Spring Rolls",
+          "price": 120,
+          "availability": true,
+          "taxRate": 5,
+          "description": "Crispy rolls stuffed with mixed veggies.",
+          "image": "https://images.unsplash.com/photo-1731601816600-b86d5a1e35b3?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2070"
+        },
+        {
+          "id": 410,
+          "name": "Nachos with Cheese Dip",
+          "price": 150,
+          "availability": true,
+          "taxRate": 5,
+          "description": "Crispy nachos with hot cheese dip.",
+          "image": "https://images.unsplash.com/photo-1655017977188-f192791f1ffd?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDJ8fHxlbnwwfHx8fHw%3D&auto=format&fit=crop&q=60&w=900"
+        }
+      ],
+  
+      "Beverage": [
+        {
+          "id": 501,
+          "name": "Cold Coffee",
+          "price": 120,
+          "availability": true,
+          "taxRate": 5,
+          "description": "Iced coffee topped with cream.",
+          "image": "https://images.unsplash.com/photo-1725251825984-180828ec6ae7?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2231"
+        },
+        {
+          "id": 502,
+          "name": "Oreo Shake",
+          "price": 150,
+          "availability": true,
+          "taxRate": 5,
+          "description": "Chocolate shake blended with Oreos.",
+          "image": "https://plus.unsplash.com/premium_photo-1695035006670-766d822b26b0?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2071"
+        },
+        {
+          "id": 503,
+          "name": "Strawberry Shake",
+          "price": 140,
+          "availability": true,
+          "taxRate": 5,
+          "description": "Refreshing strawberry milkshake.",
+          "image": "hhttps://images.unsplash.com/photo-1589733955941-5eeaf752f6dd?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2071"
+        },
+        {
+          "id": 504,
+          "name": "Chocolate Shake",
+          "price": 150,
+          "availability": true,
+          "taxRate": 5,
+          "description": "Rich creamy chocolate milkshake.",
+          "image": "https://images.unsplash.com/photo-1507750549272-e58742b1df80?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2070"
+        },
+        {
+          "id": 505,
+          "name": "Mango Lassi",
+          "price": 110,
+          "availability": true,
+          "taxRate": 5,
+          "description": "Sweet mango lassi made with yogurt.",
+          "image": "https://plus.unsplash.com/premium_photo-1720552288563-f14030ae1dcd?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2070"
+        },
+        {
+          "id": 506,
+          "name": "Lemon Iced Tea",
+          "price": 100,
+          "availability": true,
+          "taxRate": 5,
+          "description": "Refreshing iced tea with lemon twist.",
+          "image": "https://images.unsplash.com/photo-1560523964-7c0a83b8f8e3?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2070"
+        },
+        {
+          "id": 507,
+          "name": "Virgin Mojito",
+          "price": 130,
+          "availability": true,
+          "taxRate": 5,
+          "description": "Minty lime mocktail perfect for summer.",
+          "image": "https://images.unsplash.com/photo-1749802584126-4a211e729bee?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1674"
+        },
+        {
+          "id": 508,
+          "name": "Hot Coffee",
+          "price": 100,
+          "availability": true,
+          "taxRate": 5,
+          "description": "Freshly brewed coffee served hot.",
+          "image": "https://plus.unsplash.com/premium_photo-1674406102318-c9d362ad510b?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2070"
+        },
+        {
+          "id": 509,
+          "name": "Cappuccino",
+          "price": 140,
+          "availability": true,
+          "taxRate": 5,
+          "description": "Classic Italian coffee with frothy milk.",
+          "image": "https://images.unsplash.com/photo-1584797154063-dbc81e0e5000?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2069"
+        },
+        {
+          "id": 510,
+          "name": "Masala Chai",
+          "price": 80,
+          "availability": true,
+          "taxRate": 5,
+          "description": "Traditional Indian spiced tea.",
+          "image": "https://images.unsplash.com/photo-1646294567230-b56cb0cd1f5b?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2070"
+        }
+      ],
+  
+      "Drinks": [
+        {
+          "id": 601,
+          "name": "Kingfisher Premium",
+          "price": 180,
+          "availability": true,
+          "taxRate": 5,
+          "description": "India’s iconic beer with a crisp taste.",
+          "image": "https://images.unsplash.com/photo-1608270879894-3f11224168f1?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2071"
+        },
+        {
+          "id": 602,
+          "name": "Bira 91 Blonde Lager",
+          "price": 200,
+          "availability": true,
+          "taxRate": 5,
+          "description": "Refreshing craft beer with citrus finish.",
+          "image": "https://images.unsplash.com/photo-1622013021725-b92aed350e34?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=987"
+        },
+        {
+          "id": 603,
+          "name": "Simba Strong",
+          "price": 210,
+          "availability": true,
+          "taxRate": 5,
+          "description": "Rich, full-bodied Indian craft beer.",
+          "image": "https://images.unsplash.com/photo-1741971920493-e06a8c39c49b?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1626"
+        },
+        {
+          "id": 604,
+          "name": "Budweiser Magnum",
+          "price": 220,
+          "availability": true,
+          "taxRate": 5,
+          "description": "Smooth lager with deep malt flavor.",
+          "image": "https://images.unsplash.com/photo-1592780828849-5522284ef3ac?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=987"
+        },
+        {
+          "id": 605,
+          "name": "Heineken",
+          "price": 260,
+          "availability": true,
+          "taxRate": 5,
+          "description": "Balanced Dutch beer with smooth finish.",
+          "image": "https://images.unsplash.com/photo-1691244863976-a2a95a45af5c?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2070"
+        },
+        {
+          "id": 606,
+          "name": "Corona Extra",
+          "price": 250,
+          "availability": true,
+          "taxRate": 5,
+          "description": "Smooth beer with tropical vibes.",
+          "image": "https://images.unsplash.com/photo-1604752222457-749528abd25e?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2028"
+        },
+        {
+          "id": 607,
+          "name": "Royal Challenge Lager",
+          "price": 190,
+          "availability": true,
+          "taxRate": 5,
+          "description": "Classic Indian lager with rich taste.",
+          "image": "https://images.unsplash.com/photo-1687154502653-8d79a7bb808d?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1625"
+        },
+        {
+          "id": 608,
+          "name": "Carlsberg Smooth",
+          "price": 240,
+          "availability": true,
+          "taxRate": 5,
+          "description": "Smooth Danish beer with light finish.",
+          "image": "https://images.unsplash.com/photo-1751890500335-1e35537bc9bd?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2070"
+        }
+      ]
+  },
+  
+    "orders": [
+      {
+        "orderId": "ORD-001",
+        "tableNumber": 5,
+        "customerName": "Rohan Mehta",
+        "employeeId": 2,
+        "status": "Completed",
+        "orderDate": "2025-10-10T13:20:00",
+        "items": [
+          {
+            "menuId": 201,
+            "name": "Margherita Pizza",
+            "quantity": 2,
+            "price": 180,
+            "tax": 18,
+            "subtotal": 378
+          },
+          {
+            "menuId": 221,
+            "name": "Cold Coffee",
+            "quantity": 1,
+            "price": 120,
+            "tax": 6,
+            "subtotal": 126
+          }
+        ],
+        "discount": 0,
+        "serviceCharge": 61.95,
+        "gst": 29.48,
+        "totalAmount": 710.93,
+        "paymentMethod": "UPI",
+        "invoiceId": "INV-001"
+      }
+    ],
+  
+    "invoices": [
+      {
+        "invoiceId": "INV-001",
+        "orderId": "ORD-001",
+        "restaurantName": "SpiceHub Restaurant",
+        "customerName": "Rohan Mehta",
+        "tableNumber": 5,
+        "date": "2025-10-10",
+        "time": "13:25",
+        "items": [
+          {
+            "name": "Margherita Pizza",
+            "quantity": 2,
+            "price": 180,
+            "tax": 18,
+            "subtotal": 378
+          },
+          {
+            "name": "Cold Coffee",
+            "quantity": 1,
+            "price": 120,
+            "tax": 6,
+            "subtotal": 126
+          }
+        ],
+        "gst": 29.48,
+        "serviceCharge": 61.95,
+        "totalAmount": 710.93,
+        "paymentMethod": "UPI",
+        "status": "Paid"
+      }
+    ],
+  
+    "dashboard": {
+      "manager": {
+        "summary": {
+          "totalEmployees": 5,
+          "totalOrders": 450,
+          "totalRevenue": 125000,
+          "totalCustomersServed": 410
+        },
+        "charts": {
+          "dailySales": [
+            { "date": "2025-10-05", "sales": 12000 },
+            { "date": "2025-10-06", "sales": 13500 },
+            { "date": "2025-10-07", "sales": 15000 },
+            { "date": "2025-10-08", "sales": 14200 },
+            { "date": "2025-10-09", "sales": 16800 }
+          ],
+          "topEmployees": [
+            { "name": "Amit Kumar", "sales": 45000 },
+            { "name": "Neha Singh", "sales": 38000 }
+          ],
+          "topDishes": [
+            { "name": "Paneer Butter Masala", "orders": 180 },
+            { "name": "Masala Dosa", "orders": 120 }
+          ]
+        }
+      },
+      "employee": {
+        "employeeId": 2,
+        "totalOrdersHandled": 90,
+        "totalRevenueGenerated": 45000,
+        "averageOrderValue": 500,
+        "recentOrders": ["ORD-001", "ORD-002", "ORD-003"]
+      }
+    },
+  
+    "auth": {
+      "roles": [
+        {
+          "role": "Manager",
+          "permissions": [
+            "manageEmployees",
+            "manageMenu",
+            "viewReports",
+            "viewDashboard",
+            "createOrder",
+            "modifyOrder"
+          ]
+        },
+        {
+          "role": "Employee",
+          "permissions": ["createOrder", "modifyOrder", "viewOwnSales"]
+        }
+      ]
+    }
+  }

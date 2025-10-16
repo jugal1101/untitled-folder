@@ -163,10 +163,13 @@ export default function HistoryPage() {
     <div
       className="flex min-h-screen text-gray-100"
       style={{
-        backgroundImage:
-          "linear-gradient(rgba(10,10,10,0.9), rgba(20,20,20,0.95)), url('https://melrosecollective.net/wp-content/uploads/2014/12/restaurant2.jpg')",
+        backgroundImage: `
+          radial-gradient(circle at center, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.70) 100%),
+          url('https://melrosecollective.net/wp-content/uploads/2014/12/restaurant2.jpg')
+        `,
         backgroundSize: "cover",
         backgroundPosition: "center",
+        transition: "background 0.5s ease-in-out",
       }}
     >
       {/* Sidebar */}

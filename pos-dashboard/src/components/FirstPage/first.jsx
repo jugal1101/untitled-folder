@@ -16,7 +16,7 @@ export default function First() {
       <div className="flex flex-col items-center justify-center text-white gap-12 text-center px-4">
         
         {/* Restaurant Name */}
-        <h1 className="text-5xl md:text-6xl font-extrabold text-yellow-500 drop-shadow-lg">
+        <h1 className="text-5xl md:text-6xl font-extrabold text-[#c7a86e] drop-shadow-lg">
           Desi Tadaka{" "}
           <span className="block md:inline text-white text-2xl font-medium">
             - Dil Se Desi
@@ -30,7 +30,7 @@ export default function First() {
             onClick={() => navigate("/manager-login")}
             className="bg-white/20 hover:bg-white/30 backdrop-blur-md border border-white/20 rounded-2xl shadow-lg hover:shadow-xl w-72 h-60 p-8 flex flex-col items-center justify-center text-white cursor-pointer transition-transform transform hover:-translate-y-2"
           >
-            <div className="text-5xl text-yellow-500 mb-3">
+            <div className="text-5xl text-[#c7a86e] mb-3">
               <FaUserTie />
             </div>
             <h3 className="text-xl font-semibold mb-2">Restaurant Owner</h3>
@@ -42,7 +42,7 @@ export default function First() {
             onClick={() => navigate("/employee-login")}
             className="bg-white/20 hover:bg-white/30 backdrop-blur-md border border-white/20 rounded-2xl shadow-lg hover:shadow-xl w-72 h-60 p-8 flex flex-col items-center justify-center text-white cursor-pointer transition-transform transform hover:-translate-y-2"
           >
-            <div className="text-5xl text-yellow-500 mb-3">
+            <div className="text-5xl text-[#c7a86e] mb-3">
               <FaUsers />
             </div>
             <h3 className="text-xl font-semibold mb-2">Employee</h3>

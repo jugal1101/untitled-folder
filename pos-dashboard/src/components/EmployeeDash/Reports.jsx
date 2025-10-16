@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { FaDownload } from "react-icons/fa";
 import {
   LineChart,
@@ -43,38 +43,51 @@ export default function EmployeeReportPage() {
     const reportElement = document.getElementById("report-section");
     if (!reportElement) return;
 
-    // Temporarily remove overflow for accurate capture
     const originalOverflow = reportElement.style.overflow;
     reportElement.style.overflow = "visible";
 
-    // Take screenshot
     const canvas = await html2canvas(reportElement, {
-      scale: 2, // higher scale for better resolution
+      scale: 2,
       backgroundColor: null,
       useCORS: true,
     });
 
-    // Restore overflow
     reportElement.style.overflow = originalOverflow;
 
-    // Generate PDF
     const pdf = new jsPDF("p", "mm", "a4");
     const imgData = canvas.toDataURL("image/png");
-    const pdfWidth = 210; // A4 width in mm
+    const pdfWidth = 210;
     const pdfHeight = (canvas.height * pdfWidth) / canvas.width;
     pdf.addImage(imgData, "PNG", 0, 0, pdfWidth, pdfHeight);
     pdf.save("Employee_Report.pdf");
   };
 
+  // ✅ Darken background on scroll and hover
+  const [isDark, setIsDark] = useState(false);
+  const [isHover, setIsHover] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => setIsDark(window.scrollY > 50);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const baseOpacity = isDark ? 0.55 : 0.35;
+  const hoverOpacity = isHover ? 0.7 : baseOpacity;
+
   return (
     <div
-      className="flex min-h-screen text-gray-100"
+      className="flex min-h-screen text-gray-100 transition-all duration-700"
       style={{
-        backgroundImage:
-          "linear-gradient(rgba(10,10,10,0.85), rgba(20,20,20,0.95)), url('https://melrosecollective.net/wp-content/uploads/2014/12/restaurant2.jpg')",
+        backgroundImage: `
+          radial-gradient(circle at center, rgba(0,0,0,${hoverOpacity}) 40%, rgba(0,0,0,${hoverOpacity + 0.25}) 100%),
+          url('https://melrosecollective.net/wp-content/uploads/2014/12/restaurant2.jpg')
+        `,
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
+      onMouseEnter={() => setIsHover(true)}
+      onMouseLeave={() => setIsHover(false)}
     >
       <EmployeeNavbar />
 
@@ -157,8 +170,13 @@ export default function EmployeeReportPage() {
           </div>
         </div>
 
-        <div className="text-center text-gray-400 mt-10 text-sm">
-          © 2025 Restaurant Employee Dashboard. All rights reserved.
+        {/* Footer */}
+        <div className="mt-10">
+          <div className="bg-[#1a1a1a]/80 py-4 rounded-lg shadow-inner">
+                <p className="text-center text-[#f5e6c8] font-medium text-sm">
+      © 2025 Restaurant Employee Dashboard. All rights reserved.
+    </p>
+          </div>
         </div>
       </main>
     </div>
