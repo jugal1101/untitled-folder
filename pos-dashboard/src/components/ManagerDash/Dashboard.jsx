@@ -24,18 +24,17 @@ ChartJS.register(CategoryScale, LinearScale, BarElement, ArcElement, Title, Tool
 
 export default function ManagerDashboard() {
   const navigate = useNavigate();
-  const [activeLink, setActiveLink] = useState("Dashboard"); // Track active page
+  const [activeLink, setActiveLink] = useState("Dashboard");
 
   const navLinks = [
     { name: "Dashboard", icon: <FaHome />, path: "/manager-dash" },
     { name: "Customer Details", icon: <FaUsers />, path: "/manager-custdetails" },
     { name: "Employee Details", icon: <FaUserTie />, path: "/manager-employeedetails" },
-    { name: "Reports", icon: <FaChartBar />, path: "/manager-reports" },
+    // { name: "Reports", icon: <FaChartBar />, path: "/manager-reports" },
     { name: "Menu", icon: <FaUtensils />, path: "/manager-menu" },
     { name: "Order History", icon: <FaHistory />, path: "/manager-orderhistory" },
   ];
 
-  // Sample dashboard data
   const summaryData = {
     totalEmployees: 12,
     totalCollections: 45230,
@@ -51,7 +50,7 @@ export default function ManagerDashboard() {
       {
         label: "Sales in ₹",
         data: [12000, 15000, 10000, 8000, 9000],
-        backgroundColor: "#FFA94D",
+        backgroundColor: "#c7a86e",
         borderRadius: 8,
       },
     ],
@@ -63,7 +62,7 @@ export default function ManagerDashboard() {
       {
         label: "# of Orders",
         data: [120, 90, 60, 50],
-        backgroundColor: ["#FFB347", "#FF8C42", "#FFD166", "#FFA94D"],
+        backgroundColor: ["#c7a86e", "#bfa374", "#d1bfa7", "#e0d8c3"],
       },
     ],
   };
@@ -76,15 +75,17 @@ export default function ManagerDashboard() {
   ];
 
   return (
-    <div className="flex min-h-screen bg-orange-50"
-     style={{
+    <div
+      className="flex min-h-screen bg-cover bg-center text-gray-100"
+      style={{
         backgroundImage:
-          "linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.6)), url('https://melrosecollective.net/wp-content/uploads/2014/12/restaurant2.jpg')",
-      }}>
+          "linear-gradient(rgba(10,10,10,0.8), rgba(20,20,20,0.95)), url('https://melrosecollective.net/wp-content/uploads/2014/12/restaurant2.jpg')",
+      }}
+    >
       {/* Sidebar */}
-      <div className="w-28 bg-white rounded-r-3xl flex flex-col justify-between py-8 shadow-md px-2">
+      <div className="w-28 bg-[#1a1a1a]/80 backdrop-blur-xl rounded-r-3xl flex flex-col justify-between py-8 px-3 shadow-2xl border-r border-gray-700/40">
         <div className="flex flex-col items-center gap-8">
-          <h1 className="text-3xl font-extrabold text-orange-500 tracking-wide">🍴</h1>
+          <h1 className="text-3xl font-extrabold text-[#c7a86e] tracking-wide drop-shadow">🍴</h1>
           {navLinks.map((link, i) => (
             <button
               key={i}
@@ -92,25 +93,27 @@ export default function ManagerDashboard() {
                 navigate(link.path);
                 setActiveLink(link.name);
               }}
-              className={`flex flex-col items-center justify-center w-24 h-20 rounded-2xl transition ${
-                activeLink === link.name ? "bg-orange-100 shadow" : "hover:bg-orange-100"
+              className={`flex flex-col items-center justify-center w-24 h-20 rounded-2xl transition-all duration-200 ${
+                activeLink === link.name
+                  ? "bg-[#c7a86e]/20 text-[#c7a86e] shadow-md"
+                  : "hover:bg-[#c7a86e]/10 text-gray-400"
               }`}
             >
-              <div className="text-2xl mb-1 text-orange-500">{link.icon}</div>
-              <span className="text-xs text-yellow-700 text-center">{link.name}</span>
+              <div className="text-2xl mb-1">{link.icon}</div>
+              <span className="text-xs text-center">{link.name}</span>
             </button>
           ))}
         </div>
       </div>
 
       {/* Main Content */}
-      <div className="flex-1 p-10 flex flex-col gap-10">
-        <h1 className="text-3xl font-bold text-yellow-800">{activeLink}</h1>
+      <div className="flex-1 p-10 flex flex-col gap-10 overflow-y-auto">
+        <h1 className="text-3xl font-semibold text-[#c7a86e]">{activeLink}</h1>
 
         {activeLink === "Dashboard" && (
           <>
             {/* Summary Cards */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-6">
+            <div className="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-6 gap-6">
               {[
                 { label: "Total Employees", value: summaryData.totalEmployees },
                 { label: "Total Collections", value: `₹${summaryData.totalCollections}` },
@@ -121,55 +124,81 @@ export default function ManagerDashboard() {
               ].map((item, i) => (
                 <div
                   key={i}
-                  className="bg-white rounded-3xl p-6 shadow-md flex flex-col items-center hover:shadow-lg transition"
+                  className="bg-[rgba(255,255,255,0.06)] border border-[rgba(255,255,255,0.1)] rounded-3xl p-6 shadow-md hover:shadow-[#c7a86e]/20 transition flex flex-col justify-center items-center text-center"
                 >
-                  <span className="text-gray-500 text-sm">{item.label}</span>
-                  <span className="text-2xl font-bold text-orange-500">{item.value}</span>
+                  <span className="text-gray-400 text-sm mb-1">{item.label}</span>
+                  <span className="text-2xl font-bold text-[#c7a86e] leading-snug">{item.value}</span>
                 </div>
               ))}
             </div>
 
-            {/* Charts & Top Dishes */}
-            <div className="flex flex-col lg:flex-row gap-10">
-              <div className="bg-white rounded-3xl shadow-md p-6 flex-1">
-                <h2 className="text-xl font-semibold mb-4 text-orange-500">Employee Sales Performance</h2>
-                <Bar
-                  data={employeePerformance}
-                  options={{
-                    responsive: true,
-                    plugins: { legend: { display: false } },
-                    scales: { y: { beginAtZero: true } },
-                  }}
-                />
-              </div>
-
-              <div className="bg-white rounded-3xl shadow-md p-6 flex-1">
-                <h2 className="text-xl font-semibold mb-4 text-orange-500">Orders by Category</h2>
-                <Pie data={orderByCategory} />
-              </div>
-
-              <div className="bg-white rounded-3xl shadow-md p-6 w-full lg:w-1/3">
-                <h2 className="text-xl font-semibold mb-4 text-orange-500">Top Dishes</h2>
-                <div className="flex flex-col gap-4">
-                  {topDishes.map((dish, i) => (
-                    <div
-                      key={i}
-                      className="flex justify-between bg-orange-50 p-4 rounded-xl shadow hover:shadow-lg transition"
-                    >
-                      <span className="text-gray-800 font-medium">{dish.name}</span>
-                      <span className="text-orange-500 font-semibold">{dish.sold} sold</span>
-                    </div>
-                  ))}
+            {/* Charts & Top Dishes Section */}
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
+              {/* Bar Chart */}
+              <div className="bg-[rgba(255,255,255,0.06)] border border-[rgba(255,255,255,0.1)] rounded-3xl p-8 shadow-md col-span-2">
+                <h2 className="text-xl font-semibold mb-6 text-[#c7a86e] text-center">
+                  Employee Sales Performance
+                </h2>
+                <div className="h-[400px]">
+                  <Bar
+                    data={employeePerformance}
+                    options={{
+                      responsive: true,
+                      maintainAspectRatio: false,
+                      plugins: { legend: { display: false } },
+                      scales: {
+                        y: {
+                          beginAtZero: true,
+                          ticks: { color: "#ccc", font: { size: 13 } },
+                        },
+                        x: { ticks: { color: "#ccc", font: { size: 13 } } },
+                      },
+                    }}
+                  />
                 </div>
+              </div>
+
+              {/* Pie Chart */}
+              <div className="bg-[rgba(255,255,255,0.06)] border border-[rgba(255,255,255,0.1)] rounded-3xl p-8 shadow-md">
+                <h2 className="text-xl font-semibold mb-6 text-[#c7a86e] text-center">
+                  Orders by Category
+                </h2>
+                <div className="flex justify-center items-center h-[400px]">
+                  <Pie data={orderByCategory} />
+                </div>
+              </div>
+            </div>
+
+            {/* Top Dishes Section */}
+            <div className="bg-[rgba(255,255,255,0.06)] border border-[rgba(255,255,255,0.1)] rounded-3xl p-8 shadow-md mt-8">
+              <h2 className="text-xl font-semibold mb-6 text-[#c7a86e] text-center">
+                Top Dishes
+              </h2>
+              <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                {topDishes.map((dish, i) => (
+                  <div
+                    key={i}
+                    className="flex flex-col justify-center items-center bg-[rgba(255,255,255,0.08)] rounded-2xl p-5 hover:bg-[rgba(255,255,255,0.12)] transition"
+                  >
+                    <span className="text-gray-200 font-medium text-center">
+                      {dish.name}
+                    </span>
+                    <span className="text-[#c7a86e] font-semibold mt-2">
+                      {dish.sold} sold
+                    </span>
+                  </div>
+                ))}
               </div>
             </div>
           </>
         )}
 
         {activeLink !== "Dashboard" && (
-          <div className="bg-white rounded-3xl shadow-md p-10 text-gray-700 text-center">
-            <h2 className="text-2xl font-semibold">This is the {activeLink} page</h2>
-            <p className="mt-4">You can add your content here.</p>
+          <div className="bg-[rgba(255,255,255,0.06)] border border-[rgba(255,255,255,0.1)] rounded-3xl p-10 text-center text-gray-300">
+            <h2 className="text-2xl font-semibold text-[#c7a86e]">
+              {activeLink} Page Under Development
+            </h2>
+            <p className="mt-4 text-gray-400">You can add more content here soon.</p>
           </div>
         )}
       </div>

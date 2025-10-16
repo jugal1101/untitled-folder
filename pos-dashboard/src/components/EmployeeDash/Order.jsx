@@ -1,14 +1,12 @@
 import React, { useState } from "react";
-import { FaShoppingCart, FaHome, FaClock, FaChartBar, FaCog, FaUserCircle, FaSignOutAlt, FaPlus, FaMinus, FaTrash } from "react-icons/fa";
-import { useNavigate } from "react-router-dom";
-import "tailwindcss";
-export default function OrderPage() {
-  const navigate = useNavigate();
+import { FaShoppingCart, FaPlus, FaMinus, FaTrash } from "react-icons/fa";
+import EmployeeNavbar from "../EmployeeDash/EmployeeNavbar";
 
+export default function OrderPage() {
   const [order, setOrder] = useState([
-    { name: "American Favorite", qty: 1, price: 4.87 },
-    { name: "Super Supreme", qty: 2, price: 5.75 },
-    { name: "Favorite Cheese", qty: 1, price: 6.57 },
+    { name: "American Favorite", qty: 1, price: 487 },
+    { name: "Super Supreme", qty: 2, price: 575 },
+    { name: "Favorite Cheese", qty: 1, price: 657 },
   ]);
 
   const total = order.reduce((sum, item) => sum + item.qty * item.price, 0);
@@ -32,86 +30,133 @@ export default function OrderPage() {
   };
 
   return (
-    <div className="flex min-h-screen bg-gradient-to-r from-orange-50 to-orange-100">
-      {/* Sidebar */}
-      <div className="w-20 bg-white rounded-3xl flex flex-col items-center py-10 gap-8 shadow-md">
-        <FaHome className="text-gray-500 text-2xl hover:text-orange-400 cursor-pointer" onClick={() => navigate("/")} />
-        <FaShoppingCart className="text-orange-400 text-2xl" />
-        <FaClock className="text-gray-500 text-2xl hover:text-orange-400 cursor-pointer" onClick={() => navigate("/history")} />
-        <FaChartBar className="text-gray-500 text-2xl hover:text-orange-400 cursor-pointer" onClick={() => navigate("/reports")} />
-        <FaCog className="text-gray-500 text-2xl hover:text-orange-400 cursor-pointer" onClick={() => navigate("/profile")} />
-        <FaUserCircle className="text-gray-500 text-2xl hover:text-orange-400 cursor-pointer mt-auto" />
-        <FaSignOutAlt className="text-gray-500 text-2xl hover:text-orange-400 cursor-pointer" />
-      </div>
+    <div
+      className="flex min-h-screen text-gray-100 relative"
+      style={{
+        backgroundImage:
+          "linear-gradient(rgba(15,15,15,0.9), rgba(0,0,0,0.95)), url('https://melrosecollective.net/wp-content/uploads/2014/12/restaurant2.jpg')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+    >
+      {/* 🧭 Navbar */}
+      <EmployeeNavbar />
 
-      {/* Main Content */}
-      <div className="flex-1 flex flex-col py-10 px-6 space-y-10">
-        {/* Breadcrumb / Header */}
-        <div>
-          <p className="text-sm text-gray-400 mb-1">Home &gt; Orders &gt; Confirm Order</p>
-          <h1 className="text-3xl font-bold text-gray-800 mb-2">🧾 Confirm Your Order</h1>
-          <p className="text-gray-500">Fill in the customer details below</p>
-        </div>
+      {/* 💫 Centered Main Container */}
+      <div className="flex-1 flex justify-center items-center relative z-10 ml-24 p-6">
+        <div className="bg-[#1a1a1a]/90 border border-[#c7a86e]/40 rounded-3xl shadow-2xl backdrop-blur-xl p-10 flex flex-col lg:flex-row gap-10 max-w-6xl w-full">
+          
+          {/* 🧾 Left Side — Form */}
+          <div className="flex-1 space-y-6">
+            <h2
+              className="text-3xl font-semibold text-[#c7a86e] border-b border-[#c7a86e]/30 pb-2"
+              style={{ fontFamily: "'Playfair Display', serif" }}
+            >
+              Customer Details
+            </h2>
 
-        {/* Form & Order Summary: side-by-side on large screens */}
-        <div className="flex flex-col lg:flex-row gap-8 w-full">
-          {/* Form Section */}
-          <div className="flex-1 bg-white rounded-3xl shadow-md p-8 space-y-6">
-            <h2 className="text-xl font-semibold text-orange-500">Customer Details</h2>
-            <form className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
+            <form className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
-                <label className="block text-sm font-medium text-gray-600 mb-2">Customer ID</label>
-                <input type="text" placeholder="Enter ID" className="w-full border border-gray-300 rounded-xl p-3 focus:outline-none focus:border-orange-400" />
+                <label className="block text-sm font-medium text-[#c7a86e]/80 mb-2">
+                  Customer ID
+                </label>
+                <input
+                  type="text"
+                  placeholder="Enter ID"
+                  className="w-full bg-transparent border border-[#c7a86e]/30 text-gray-300 rounded-xl p-3 focus:border-[#c7a86e] outline-none"
+                />
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-600 mb-2">Name</label>
-                <input type="text" placeholder="Enter Name" className="w-full border border-gray-300 rounded-xl p-3 focus:outline-none focus:border-orange-400" />
+                <label className="block text-sm font-medium text-[#c7a86e]/80 mb-2">
+                  Name
+                </label>
+                <input
+                  type="text"
+                  placeholder="Enter Name"
+                  className="w-full bg-transparent border border-[#c7a86e]/30 text-gray-300 rounded-xl p-3 focus:border-[#c7a86e] outline-none"
+                />
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-600 mb-2">Table Number</label>
-                <input type="number" placeholder="Table No." className="w-full border border-gray-300 rounded-xl p-3 focus:outline-none focus:border-orange-400" />
+                <label className="block text-sm font-medium text-[#c7a86e]/80 mb-2">
+                  Table Number
+                </label>
+                <input
+                  type="number"
+                  placeholder="Table No."
+                  className="w-full bg-transparent border border-[#c7a86e]/30 text-gray-300 rounded-xl p-3 focus:border-[#c7a86e] outline-none"
+                />
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-600 mb-2">Phone Number</label>
-                <input type="text" placeholder="Enter Phone Number" className="w-full border border-gray-300 rounded-xl p-3 focus:outline-none focus:border-orange-400" />
+                <label className="block text-sm font-medium text-[#c7a86e]/80 mb-2">
+                  Phone Number
+                </label>
+                <input
+                  type="text"
+                  placeholder="Enter Phone Number"
+                  className="w-full bg-transparent border border-[#c7a86e]/30 text-gray-300 rounded-xl p-3 focus:border-[#c7a86e] outline-none"
+                />
               </div>
               <div className="md:col-span-2">
-                <label className="block text-sm font-medium text-gray-600 mb-2">Address</label>
-                <textarea rows="3" placeholder="Enter Address" className="w-full border border-gray-300 rounded-xl p-3 focus:outline-none focus:border-orange-400"></textarea>
+                <label className="block text-sm font-medium text-[#c7a86e]/80 mb-2">
+                  Address
+                </label>
+                <textarea
+                  rows="3"
+                  placeholder="Enter Address"
+                  className="w-full bg-transparent border border-[#c7a86e]/30 text-gray-300 rounded-xl p-3 focus:border-[#c7a86e] outline-none"
+                ></textarea>
               </div>
             </form>
 
-            {/* Order Type Badges */}
-            <div className="flex gap-4 mt-4">
-              <button className="bg-orange-100 text-orange-500 px-4 py-1 rounded-full text-sm font-medium">Dine In</button>
-              <button className="bg-gray-100 text-gray-500 px-4 py-1 rounded-full text-sm font-medium">Take Away</button>
+            {/* 🍽️ Dine / Takeaway Options */}
+            <div className="flex gap-4 mt-2">
+              <button className="bg-[#c7a86e]/20 border border-[#c7a86e]/50 text-[#c7a86e] px-5 py-2 rounded-full text-sm font-medium hover:bg-[#c7a86e]/40 hover:text-black transition">
+                Dine In
+              </button>
+              <button className="bg-transparent border border-[#c7a86e]/50 text-[#c7a86e]/80 px-5 py-2 rounded-full text-sm font-medium hover:bg-[#c7a86e]/30 hover:text-black transition">
+                Take Away
+              </button>
             </div>
           </div>
 
-          {/* Order Summary */}
-          <div className="w-full lg:w-96 bg-white rounded-3xl shadow-md p-6 flex flex-col justify-between relative">
-            <h2 className="text-xl font-semibold text-orange-500 mb-4 flex items-center gap-2">
+          {/* 🛒 Right Side — Order Summary */}
+          <div className="w-full lg:w-96 bg-[#1f1f1f]/80 border border-[#c7a86e]/40 rounded-3xl p-6 shadow-lg flex flex-col justify-between">
+            <h2 className="text-xl font-semibold text-[#c7a86e] mb-4 flex items-center gap-2 border-b border-[#c7a86e]/30 pb-2">
               <FaShoppingCart /> Order Summary
             </h2>
 
-            <div className="divide-y divide-gray-200 mb-4 max-h-[60vh] overflow-y-auto">
+            <div className="divide-y divide-[#c7a86e]/20 mb-4 max-h-[45vh] overflow-y-auto">
               {order.map((item, index) => (
-                <div key={index} className="flex justify-between items-center py-3 text-gray-700 hover:bg-orange-50 rounded-lg px-2 transition">
+                <div
+                  key={index}
+                  className="flex justify-between items-center py-3 text-gray-300 hover:bg-[#2a2a2a]/70 rounded-lg px-2 transition"
+                >
                   <div>
-                    <p className="font-medium">{item.name}</p>
-                    <p className="text-sm text-gray-500 flex items-center gap-2">
+                    <p className="font-medium text-[#c7a86e]">{item.name}</p>
+                    <p className="text-sm text-gray-400 flex items-center gap-2">
                       Qty: {item.qty}
-                      <button onClick={() => incrementQty(index)} className="bg-orange-200 p-1 rounded hover:bg-orange-300">
+                      <button
+                        onClick={() => incrementQty(index)}
+                        className="bg-[#c7a86e]/20 p-1 rounded hover:bg-[#c7a86e]/40"
+                      >
                         <FaPlus className="text-xs" />
                       </button>
-                      <button onClick={() => decrementQty(index)} className="bg-orange-200 p-1 rounded hover:bg-orange-300">
+                      <button
+                        onClick={() => decrementQty(index)}
+                        className="bg-[#c7a86e]/20 p-1 rounded hover:bg-[#c7a86e]/40"
+                      >
                         <FaMinus className="text-xs" />
                       </button>
                     </p>
                   </div>
                   <div className="flex items-center gap-2">
-                    <span className="font-semibold text-orange-500">${(item.qty * item.price).toFixed(2)}</span>
-                    <button onClick={() => removeItem(index)} className="text-red-500 hover:text-red-700">
+                    <span className="font-semibold text-[#c7a86e]">
+                      ₹{(item.qty * item.price).toFixed(2)}
+                    </span>
+                    <button
+                      onClick={() => removeItem(index)}
+                      className="text-red-500 hover:text-red-700"
+                    >
                       <FaTrash />
                     </button>
                   </div>
@@ -119,14 +164,14 @@ export default function OrderPage() {
               ))}
             </div>
 
-            {/* Total */}
-            <div className="border-t border-gray-200 pt-4 flex justify-between text-lg font-semibold text-gray-800 mb-4">
+            {/* 💰 Total */}
+            <div className="border-t border-[#c7a86e]/30 pt-4 flex justify-between text-lg font-semibold text-[#c7a86e] mb-4">
               <span>Total</span>
-              <span>${total.toFixed(2)}</span>
+              <span>₹{total.toFixed(2)}</span>
             </div>
 
-            {/* Sticky Confirm Button */}
-            <button className="w-full bg-orange-500 hover:bg-orange-600 text-white py-3 rounded-xl font-medium shadow-md transition sticky bottom-0">
+            {/* ✅ Confirm Button */}
+            <button className="w-full bg-[#c7a86e] hover:bg-[#bfa374] text-black py-3 rounded-xl font-semibold shadow-md transition">
               Confirm Order ✅
             </button>
           </div>
